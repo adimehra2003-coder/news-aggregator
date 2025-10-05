@@ -3,7 +3,7 @@ const newsContainer = document.getElementById("news-container");
 
 async function fetchNews() {
   const response = await fetch(
-    https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}
+    https://newsapi.org/v2/top-headlines?country=us&apiKey=${d0f7e171576a4a8a8a98383149590e8d}
   );
   const data = await response.json();
 
