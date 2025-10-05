@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   async function fetchRealNews() {
-    const API_KEY = "YOUR_API_KEY"; // Replace with your key from newsapi.org
+    const API_KEY = "d0f7e171576a4a8a8a98383149590e8d"; // Replace with your key from newsapi.org
     const NEWS_URL = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`;
 
     try {
