@@ -1,22 +1,29 @@
-const apiKey = "d0f7e171576a4a8a8a98383149590e8d";
+// script.js
+console.log("Script loaded!"); // Check if JS is working
+
 const newsContainer = document.getElementById("news-container");
 
-async function fetchNews() {
-  const response = await fetch(
-    https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}
-  );
-  const data = await response.json();
+// Dummy news articles (no API required)
+const dummyArticles = [
+  { title: "News 1", description: "This is the first news article.", url: "#" },
+  { title: "News 2", description: "This is the second news article.", url: "#" },
+  { title: "News 3", description: "This is the third news article.", url: "#" }
+];
 
-  newsContainer.innerHTML = data.articles
-    .map(article => `
-      <div class="article">
-        <img src="${article.urlToImage || 'images/default.jpg'}" alt="news">
-        <h2>${article.title}</h2>
-        <p>${article.description || ''}</p>
-        <a href="${article.url}" target="_blank">Read more</a>
-      </div>
-    `)
-    .join('');
+function displayNews(articles) {
+  newsContainer.innerHTML = ""; // Clear previous content
+
+  articles.forEach(article => {
+    const newsCard = document.createElement("div");
+    newsCard.classList.add("news-card");
+    newsCard.innerHTML = `
+      <h2>${article.title}</h2>
+      <p>${article.description}</p>
+      <a href="${article.url}" target="_blank">Read more</a>
+    `;
+    newsContainer.appendChild(newsCard);
+  });
 }
 
-fetchNews();
+// Display the dummy news
+displayNews(dummyArticles);
